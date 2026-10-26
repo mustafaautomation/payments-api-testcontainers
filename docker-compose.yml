@@ -1,0 +1,11 @@
+# Local PostgreSQL for running the app with `mvn spring-boot:run`.
+# Tests do not need this: they start their own container through Testcontainers.
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: payments
+      POSTGRES_USER: payments
+      POSTGRES_PASSWORD: payments
+    ports:
+      - "5432:5432"
